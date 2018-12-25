@@ -485,7 +485,7 @@ class Spread:
         if sheet:
             self.open_sheet(sheet)
 
-        if not self.sheet:
+        if self.sheet is None:
             raise NoWorksheetException("No open worksheet")
 
         vals = self._retry_get_all_values()
